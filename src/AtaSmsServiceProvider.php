@@ -24,7 +24,7 @@ class AtaSmsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-                __DIR__ . "/../config/atasms.php" => config_path('atasms.php')
+                __DIR__ . "/../config/atatechsms.php" => config_path('atatechsms.php')
             ]
         );
     }
