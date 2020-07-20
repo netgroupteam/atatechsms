@@ -16,9 +16,19 @@
     "minimum-stability": "dev",
 
     "autoload": {
+        "psr-4": {
+            "Netgroup\\AtaTechSms\\": "src"
+        }
     },
 
     "require": {
         "spatie/array-to-xml": "^2.12"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Netgroup\\AtaTechSms\\AtaSmsServiceProvider"
+            ]
+        }
     }
 }

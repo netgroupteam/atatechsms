@@ -1,6 +1,6 @@
 <?php
 
-namespace Netgroup\AtaSms;
+namespace Netgroup\AtaTechSms;
 
 use Illuminate\Support\ServiceProvider;
 
