@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Netgroup\\AtaTechSms\\AtaSmsServiceProvider"
+                "Netgroup\\AtaTechSms\\AtaTechSmsServiceProvider"
             ]
         }
     }

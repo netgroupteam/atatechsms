@@ -4,7 +4,7 @@ namespace Netgroup\AtaTechSms;
 
 use Illuminate\Support\ServiceProvider;
 
-class AtaSmsServiceProvider extends ServiceProvider
+class AtaTechSmsServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
