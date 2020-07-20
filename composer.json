@@ -7,6 +7,12 @@
             "email": "ahagverdiyev@netgroup.az"
         }
     ],
+    "keywords": [
+        "netgorup",
+        "atatechsms"
+    ],
+    "license": "MIT",
+
     "minimum-stability": "dev",
 
     "autoload": {
