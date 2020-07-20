@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use Spatie\ArrayToXml\ArrayToXml;
 use Illuminate\Support\Facades\Http;
 use Netgroup\AtaTechSms\BroadcastResponse;
-use function GuzzleHttp\Psr7\str;
 
 trait BroadcastHelper
 {
