@@ -18,7 +18,7 @@ trait BroadcastHelper
 
     public function __construct()
     {
-        $this->credentials = config('atasms.credentials');
+        $this->credentials = config('atatechsms.credentials');
         $this->client = new Client();
         $this->response = new BroadcastResponse();
     }
