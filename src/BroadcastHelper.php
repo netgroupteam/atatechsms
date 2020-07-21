@@ -6,7 +6,6 @@ namespace Netgroup\AtaTechSms;
 
 use GuzzleHttp\Client;
 use Spatie\ArrayToXml\ArrayToXml;
-use Illuminate\Support\Facades\Http;
 use Netgroup\AtaTechSms\BroadcastResponse;
 
 trait BroadcastHelper
@@ -129,9 +128,9 @@ trait BroadcastHelper
         ];
 
 
-        $response = Http::send('POST', $this->credentials['host_api'], $options);
+        $response = $this->client->request('POST', $this->credentials['host_api'], $options);
 
-        $simpleXml = simplexml_load_string($response->body(), 'SimpleXMLElement', LIBXML_NOCDATA);
+        $simpleXml = simplexml_load_string($response->getBody(), 'SimpleXMLElement', LIBXML_NOCDATA);
         $json = json_encode($simpleXml);
         $array = json_decode($json, true);
 
