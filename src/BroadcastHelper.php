@@ -124,7 +124,8 @@ trait BroadcastHelper
             'headers' => [
                 'Content-Type' => 'text/xml; charset=UTF8'
             ],
-            'body' => $xml
+            'body' => $xml,
+            'verify' => false
         ];
 
 
