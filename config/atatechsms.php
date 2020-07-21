@@ -2,8 +2,8 @@
 
 return [
     'credentials' => [
-        'login' => '',
-        'password' => '',
-        'host_api' => 'https://sms.atatexnologiya.az/bulksms/api',
+        'login' => env('ATA_TECH_SMS_LOGIN'),
+        'password' => env('ATA_TECH_SMS_PASSWORD'),
+        'host_api' => env('ATA_TECH_SMS_HOST'),
     ]
 ];
