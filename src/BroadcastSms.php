@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Carbon\Traits\Date;
 
 
-class BroadcastController extends Controller
+class BroadcastSms extends Controller
 {
-    use BroadcastHelper;
+    use BroadcastSmsHelper;
 
     /**
      * @param string $title
@@ -32,15 +32,5 @@ class BroadcastController extends Controller
     {
         return $this->sendIndividualMessage($title, $scheduleDate, $phonesMessages);
     }
-
-    public function getRemainedUnits(){
-        return $this->getReports('units');
-    }
-
-    public function getSenderNames(){
-
-        return $this->getReports('titles');
-    }
-
 
 }

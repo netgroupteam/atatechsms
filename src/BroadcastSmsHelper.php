@@ -6,9 +6,9 @@ namespace Netgroup\AtaTechSms;
 
 use GuzzleHttp\Client;
 use Spatie\ArrayToXml\ArrayToXml;
-use Netgroup\AtaTechSms\BroadcastResponse;
+use Netgroup\AtaTechSms\ResponseCodes;
 
-trait BroadcastHelper
+trait BroadcastSmsHelper
 {
     private $credentials;
     private $client;
@@ -18,7 +18,7 @@ trait BroadcastHelper
     {
         $this->credentials = config('atatechsms.credentials');
         $this->client = new Client();
-        $this->response = new BroadcastResponse();
+        $this->response = new ResponseCodes();
     }
 
     public function getCredentials(){
@@ -86,28 +86,6 @@ trait BroadcastHelper
         return ['message' => $this->response->getStatus($status['head']['responsecode'])];
     }
 
-    public function getReports($operation){
-        $requestHeader = [
-            'head' => [
-                'operation' => $operation,
-                'login' => $this->credentials['login'],
-                'password' => $this->credentials['password']
-            ]
-        ];
-
-        $xml = ArrayToXml::convert($requestHeader, [
-            'rootElementName' => 'request'
-        ], true, 'UTF-8');
-
-        $response = $this->send($xml);
-
-//        $operation = $operation == 'titles' ? 'title' : $operation;
-//
-//        $result = ['message' => $this->response->getStatus($response['head']['responsecode'])];
-
-        return $response;
-    }
-
 
     public function controlIdGenerator(){
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -118,6 +96,7 @@ trait BroadcastHelper
         }
         return $randomString;
     }
+
 
     public function send($xml){
         $options = [
